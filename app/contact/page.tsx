@@ -1,0 +1,2 @@
+import { ContactForm } from "./contact-form";
+export default function ContactPage() { return <div className="contact-page"><section className="page-hero page-hero--contact"><div className="page-hero-image" data-parallax="10" aria-hidden="true" /><div className="page-hero-copy"><p className="context">Contact</p><h1>Start with the site, obligation or operational risk.</h1><p>Share the operating environment, service required and project timing.</p></div></section><section className="contact-stage compact-section"><ContactForm /></section></div>; }

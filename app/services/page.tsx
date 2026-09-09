@@ -1,0 +1,6 @@
+import Link from "next/link";
+import { services } from "../data";
+
+export default function ServicesPage() {
+  return <><section className="page-hero page-hero--services"><div className="page-hero-image" data-parallax="10" aria-hidden="true" /><div className="page-hero-copy"><p className="context">Core Service Capabilities</p><h1>Our combined capability spans the full environmental and occupational health lifecycle.</h1><p>From emissions and air quality monitoring, through carbon accounting and workforce training, to certified remediation and legal sign-off.</p></div></section><section className="service-accordion compact-section">{services.map((service, index) => <div className="pop-shell" key={service.slug}><details id={service.slug} open={index === 0}><summary><span>{service.title}</span><i aria-hidden="true">+</i></summary><div className="service-body"><div className="service-overview"><p>{service.summary}</p><h3>How it works</h3><p>{service.process}</p></div><div><h3>What the client receives</h3><ul>{service.receives.map(item => <li key={item}>{item}</li>)}</ul></div><div><h3>Why it matters</h3><ul>{service.importance.map(item => <li key={item}>{item}</li>)}</ul></div><Link className="glass-button dark" href={`/contact?service=${service.slug}`}>Discuss this service</Link></div></details></div>)}</section></>;
+}
